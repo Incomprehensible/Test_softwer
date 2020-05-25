@@ -1,0 +1,28 @@
+Task #1
+I usually write code in VSCode, but use Vim for small projects like this one.
+1. Source code is task1.c. This simple program takes char array as an argument and creates its copy.
+2. Compile my program with arm-linux-gnueabi-gcc compiler:
+
+	arm-linux-gnueabi-gcc task1.c -o task1
+
+We can see ELF header to make sure it's for ARM arch:
+
+	readelf -h task1
+	Machine:	ARM
+
+I also have a aarch64-elf-gcc compiler on my system, which I could use to build 64bit binary specifically for ARMv8. In order to have a binary able to run on both ARMv7 and ARMv8, I need my app to be 32 bit. Which is why I use ARM 32bit toolchain gcc-arm-linux-gnueabihf.
+Binary is task1.
+3. I used Ghidra for binary analysis. I also like Radare2. File with analysis is Task1_analysis.pdf.
+
+Task #2
+1. Source code with bubble sort algorithm is task2.c.
+2. Compile:
+
+	arm-linux-gnueabi-gcc task2.c -o task2
+
+Binary is task2.
+3. For patching source file I used . Patching process went like this:
+
+I also tried to patch binary and used .
+Pathed binary is task2_patched.
+
