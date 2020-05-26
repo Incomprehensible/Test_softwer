@@ -1,9 +1,15 @@
 #include <stdio.h>
 
-void multiply_by8(int *arr, int sz)
+__attribute__ ((noinline))
+volatile void multiply_by8(int *arr, int sz)
 {
 	for (int i = 0; i < sz; ++i)
 		arr[i] *= 8;
+	
+	printf("After multiplying: ");
+	for (int i = 0; i < sz; ++i)
+		printf("%d ", arr[i]);
+	putchar('\n');
 }
 
 void bubble_sort(int *arr, int sz)
@@ -22,6 +28,10 @@ void bubble_sort(int *arr, int sz)
 			}
 		}
 	}
+	printf("After sorting: ");
+	for (int i = 0; i < sz; ++i)
+		printf("%d ", arr[i]);
+	putchar('\n');
 }
 
 int main()
@@ -37,10 +47,5 @@ int main()
 	
 	bubble_sort(&arr[0], sz);
 
-	printf("After routine: ");
-	for (int i = 0; i < sz; ++i)
-		printf("%d ", arr[i]);
-
-	putchar('\n');
 	return 0;
 }
