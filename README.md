@@ -7,12 +7,12 @@
 	foo@bar:~$ arm-linux-gnueabi-gcc task1.c -o task1
 	```
 
-Можем посмотреть ELF header и убедиться, что исполняемый файл - для архитектуры ARM:
+	Можем посмотреть ELF header и убедиться, что исполняемый файл - для архитектуры ARM:
 
-```console
-foo@bar:~$ readelf -h task1
-Machine:	ARM
-```
+	```console
+	foo@bar:~$ readelf -h task1
+	Machine:	ARM
+	```
 
 У меня на системе стоит также aarch64-elf-gcc компилятор, который я могла бы использовать, чтобы скомпилировать 64-битный бинарник специально для ARMv8. Чтобы программа могла запускаться на ARMv7 и ARMv8, нужно, чтобы программа была 32-битной. Поэтому я использую ARM 32bit toolchain gcc-arm-linux-gnueabihf.
 Бинарник называется task1.
