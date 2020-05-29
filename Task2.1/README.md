@@ -1,4 +1,4 @@
-#Task #2.1
+# Task #2.1
 1. Исходный файл тот же - task2.c с bubble_sort.
 2. Компиляция, как и раньше, с arm-linux-gnueabi-gcc.
 Бинарник называется task2_before.
